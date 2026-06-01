@@ -1,4 +1,5 @@
 import 'package:card_payment_app/Home_screen.dart';
+import 'package:card_payment_app/send_money.dart';
 import 'package:flutter/material.dart';
 
 class FirstScreen extends StatelessWidget {
@@ -171,10 +172,17 @@ class FirstScreen extends StatelessWidget {
                       children: [
 
                         ServiceTile(
-                          icon: Icons.send,
-                          title: "Send Money",
-                          onTap: () {},
-                        ),
+  icon: Icons.send,
+  title: "Send Money",
+  onTap: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const SendMoneyScreen(),
+      ),
+    );
+  },
+),
 
                         ServiceTile(
                           icon: Icons.receipt_long,
