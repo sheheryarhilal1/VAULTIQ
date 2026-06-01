@@ -15,7 +15,7 @@ class _ProCardPaymentScreenState
   TextEditingController(text: "4242 4242 4242 4242");
 
   final name =
-  TextEditingController(text: "SHER HILAL");
+  TextEditingController(text: "SHEHERYAR HILAL");
 
   final expiry =
   TextEditingController(text: "12/28");

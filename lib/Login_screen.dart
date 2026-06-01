@@ -1,3 +1,5 @@
+import 'package:card_payment_app/First.dart';
+import 'package:card_payment_app/sing_up.dart';
 import 'package:flutter/material.dart';
 import 'package:card_payment_app/Home_screen.dart';
 
@@ -8,7 +10,6 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin {
-
   final email = TextEditingController();
   final password = TextEditingController();
 
@@ -58,17 +59,11 @@ class _LoginScreenState extends State<LoginScreen>
               );
             },
             child: Container(
-              padding: EdgeInsets.symmetric(
-                horizontal: 18,
-                vertical: 16,
-              ),
+              padding: EdgeInsets.symmetric(horizontal: 18, vertical: 16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(18),
                 gradient: LinearGradient(
-                  colors: [
-                    Color(0xff00C9FF),
-                    Color(0xff92FE9D),
-                  ],
+                  colors: [Color(0xff00C9FF), Color(0xff92FE9D)],
                 ),
                 boxShadow: [
                   BoxShadow(
@@ -80,10 +75,7 @@ class _LoginScreenState extends State<LoginScreen>
               ),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.verified_user_rounded,
-                    color: Colors.white,
-                  ),
+                  Icon(Icons.verified_user_rounded, color: Colors.white),
 
                   SizedBox(width: 12),
 
@@ -114,7 +106,6 @@ class _LoginScreenState extends State<LoginScreen>
 
   // ✅ LOGIN FUNCTION
   void login() async {
-
     setState(() {
       isLoading = true;
     });
@@ -128,14 +119,10 @@ class _LoginScreenState extends State<LoginScreen>
     showTopSnackBar("Secure Login Successful");
 
     Future.delayed(Duration(seconds: 2), () {
-
       Navigator.push(
         context,
-        MaterialPageRoute(
-          builder: (context) => ProCardPaymentScreen(),
-        ),
+        MaterialPageRoute(builder: (context) => FirstScreen()),
       );
-
     });
   }
 
@@ -146,7 +133,6 @@ class _LoginScreenState extends State<LoginScreen>
 
       body: Stack(
         children: [
-
           // 🌌 TOP GLOW
           Positioned(
             top: -120,
@@ -182,7 +168,6 @@ class _LoginScreenState extends State<LoginScreen>
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-
                     SizedBox(height: 45),
 
                     // 🏦 BRAND
@@ -194,7 +179,6 @@ class _LoginScreenState extends State<LoginScreen>
 
                       child: Column(
                         children: [
-
                           // 🔵 LOGO
                           Container(
                             padding: EdgeInsets.all(18),
@@ -203,10 +187,7 @@ class _LoginScreenState extends State<LoginScreen>
                               shape: BoxShape.circle,
 
                               gradient: LinearGradient(
-                                colors: [
-                                  Color(0xff00D4FF),
-                                  Color(0xff7F00FF),
-                                ],
+                                colors: [Color(0xff00D4FF), Color(0xff7F00FF)],
                               ),
 
                               boxShadow: [
@@ -290,9 +271,7 @@ class _LoginScreenState extends State<LoginScreen>
                         decoration: InputDecoration(
                           hintText: "Password",
 
-                          hintStyle: TextStyle(
-                            color: Colors.white38,
-                          ),
+                          hintStyle: TextStyle(color: Colors.white38),
 
                           prefixIcon: Icon(
                             Icons.lock_outline,
@@ -329,14 +308,11 @@ class _LoginScreenState extends State<LoginScreen>
 
                     // 🔐 TRUST SIGNALS
                     Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
                       children: [
-
                         Row(
                           children: [
-
                             Icon(
                               Icons.shield_outlined,
                               color: Colors.greenAccent,
@@ -357,10 +333,7 @@ class _LoginScreenState extends State<LoginScreen>
 
                         Text(
                           "Protected by Encryption",
-                          style: TextStyle(
-                            color: Colors.white38,
-                            fontSize: 12,
-                          ),
+                          style: TextStyle(color: Colors.white38, fontSize: 12),
                         ),
                       ],
                     ),
@@ -374,14 +347,10 @@ class _LoginScreenState extends State<LoginScreen>
 
                       child: Container(
                         decoration: BoxDecoration(
-                          borderRadius:
-                          BorderRadius.circular(18),
+                          borderRadius: BorderRadius.circular(18),
 
                           gradient: LinearGradient(
-                            colors: [
-                              Color(0xff00D4FF),
-                              Color(0xff7F00FF),
-                            ],
+                            colors: [Color(0xff00D4FF), Color(0xff7F00FF)],
                           ),
 
                           boxShadow: [
@@ -399,8 +368,7 @@ class _LoginScreenState extends State<LoginScreen>
                             shadowColor: Colors.transparent,
 
                             shape: RoundedRectangleBorder(
-                              borderRadius:
-                              BorderRadius.circular(18),
+                              borderRadius: BorderRadius.circular(18),
                             ),
                           ),
 
@@ -408,30 +376,30 @@ class _LoginScreenState extends State<LoginScreen>
 
                           child: isLoading
                               ? SizedBox(
-                            height: 24,
-                            width: 24,
+                                  height: 24,
+                                  width: 24,
 
-                            child: CircularProgressIndicator(
-                              color: Colors.white,
-                              strokeWidth: 2.8,
-                            ),
-                          )
+                                  child: CircularProgressIndicator(
+                                    color: Colors.white,
+                                    strokeWidth: 2.8,
+                                  ),
+                                )
                               : Text(
-                            "LOGIN",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              letterSpacing: 2,
+                                  "LOGIN",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.bold,
+                                    letterSpacing: 2,
 
-                              shadows: [
-                                Shadow(
-                                  blurRadius: 10,
-                                  color: Colors.black45,
+                                    shadows: [
+                                      Shadow(
+                                        blurRadius: 10,
+                                        color: Colors.black45,
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                              ],
-                            ),
-                          ),
                         ),
                       ),
                     ),
@@ -441,16 +409,13 @@ class _LoginScreenState extends State<LoginScreen>
                     // 👆 BIOMETRIC
                     Column(
                       children: [
-
                         Container(
                           padding: EdgeInsets.all(14),
 
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
 
-                            border: Border.all(
-                              color: Colors.white24,
-                            ),
+                            border: Border.all(color: Colors.white24),
                           ),
 
                           child: Icon(
@@ -464,9 +429,7 @@ class _LoginScreenState extends State<LoginScreen>
 
                         Text(
                           "Login with Biometrics",
-                          style: TextStyle(
-                            color: Colors.white60,
-                          ),
+                          style: TextStyle(color: Colors.white60),
                         ),
                       ],
                     ),
@@ -475,20 +438,23 @@ class _LoginScreenState extends State<LoginScreen>
 
                     // 🆕 SIGNUP
                     Row(
-                      mainAxisAlignment:
-                      MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
 
                       children: [
-
                         Text(
                           "Don't have an account? ",
-                          style: TextStyle(
-                            color: Colors.white54,
-                          ),
+                          style: TextStyle(color: Colors.white54),
                         ),
 
                         GestureDetector(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SignupScreen(),
+                              ),
+                            );
+                          },
 
                           child: Text(
                             "Sign Up",
@@ -533,14 +499,11 @@ class _LoginScreenState extends State<LoginScreen>
     required IconData icon,
     required bool obscure,
   }) {
-
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(18),
 
-        border: Border.all(
-          color: Colors.white.withOpacity(0.12),
-        ),
+        border: Border.all(color: Colors.white.withOpacity(0.12)),
 
         boxShadow: [
           BoxShadow(
@@ -559,14 +522,9 @@ class _LoginScreenState extends State<LoginScreen>
         decoration: InputDecoration(
           hintText: hint,
 
-          hintStyle: TextStyle(
-            color: Colors.white38,
-          ),
+          hintStyle: TextStyle(color: Colors.white38),
 
-          prefixIcon: Icon(
-            icon,
-            color: Colors.white70,
-          ),
+          prefixIcon: Icon(icon, color: Colors.white70),
 
           filled: true,
           fillColor: Colors.white.withOpacity(0.04),
